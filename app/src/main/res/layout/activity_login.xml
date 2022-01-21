@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.login.LoginActivity"
+    android:orientation="vertical"
+    android:padding="30dp"
+    >
+
+    <ImageView
+        android:id="@+id/bullsLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_bulls_foreground" />
+
+    <TextView
+        android:id="@+id/greetingText"
+        style="@style/Theme.Nosh.SubText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/syncopate_bold2"
+        android:gravity="center"
+        android:text="@string/welcome_to_nosh"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/black"
+            app:hintTextAppearance="@color/black"
+            app:hintEnabled="false"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:hint="@string/enter_email"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/black"
+            app:hintTextAppearance="@color/black"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:hint="@string/enter_password"
+                android:inputType="textPassword"
+                app:passwordToggleEnabled="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+<!--    <EditText-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/enter_email"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/greetingText" />-->
+
+<!--    <EditText-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/enter_password"-->
+<!--        android:inputType="textPassword"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textEmail" />-->
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+    />
+
+    <TextView
+        android:id="@+id/nudgeRegister"
+        style="@style/Theme.Nosh.SubText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/antic2"
+        android:gravity="center"
+        android:text="@string/not_registered_yet" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"/>
+
+
+
+
+</LinearLayout>

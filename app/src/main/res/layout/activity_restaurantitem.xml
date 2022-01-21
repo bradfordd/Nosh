@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <ImageButton
+            android:id="@+id/cartButton"
+            android:layout_width="73dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:backgroundTint="@color/white"
+            android:scaleType="fitXY"
+            android:src="@mipmap/cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="73dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="19dp"
+            android:backgroundTint="@color/white"
+            android:scaleType="fitXY"
+            android:src="@mipmap/home"
+            app:layout_constraintBottom_toTopOf="@id/sizeTxtView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/add_to_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comboCheckBox" />
+
+        <TextView
+            android:id="@+id/sizeTxtView"
+            style="@style/Theme.Nosh.Headers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/select_your_size"
+            app:layout_constraintBottom_toTopOf="@+id/sixInCheckBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/sixInCheckBox"
+            style="@style/Theme.Nosh.SubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/antic2"
+            android:text="@string/six_inch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sizeTxtView" />
+
+        <CheckBox
+            android:id="@+id/ftLongCheckBox"
+            style="@style/Theme.Nosh.SubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/antic2"
+            android:text="@string/footlong"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sixInCheckBox" />
+
+
+        <TextView
+            android:id="@+id/breadTxtView"
+            style="@style/Theme.Nosh.Headers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/select_your_bread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ftLongCheckBox" />
+
+        <CheckBox
+            android:id="@+id/wheatCheckBox"
+            style="@style/Theme.Nosh.SubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/antic2"
+            android:text="@string/wheat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/breadTxtView" />
+
+        <CheckBox
+            android:id="@+id/italianCheckBox"
+            style="@style/Theme.Nosh.SubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/antic2"
+            android:text="@string/italian"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wheatCheckBox" />
+
+        <CheckBox
+            android:id="@+id/herbCheckBox"
+            style="@style/Theme.Nosh.SubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/antic2"
+            android:text="@string/italian_herbs_and_cheese"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/italianCheckBox" />
+
+        <CheckBox
+            android:id="@+id/flatBreadCheckBox"
+            style="@style/Theme.Nosh.SubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/antic2"
+            android:text="@string/flatbread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/herbCheckBox" />
+
+
+        <TextView
+            android:id="@+id/customizeTxtViewTxtView"
+            style="@style/Theme.Nosh.Headers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/make_customizations"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flatBreadCheckBox" />
+
+        <EditText
+            android:id="@+id/customizeEditTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:fontFamily="@font/antic2"
+            android:gravity="start|top"
+            android:hint="@string/ex_no_cheese_light_sauce_etc"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customizeTxtViewTxtView" />
+
+        <CheckBox
+            android:id="@+id/comboCheckBox"
+            style="@style/Theme.Nosh.Headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/make_it_a_combo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customizeEditTxt" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

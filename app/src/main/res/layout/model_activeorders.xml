@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/rvActiveOrdersModel"
+    android:layout_marginTop="10dp">
+
+    <CheckBox
+        android:id="@+id/orderCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/antic2"
+        android:text="@string/textview" />
+
+
+    <TextView
+        android:id="@+id/orderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/antic2"
+        android:text="@string/ordername"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/orderCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/antic2"
+        android:text="@string/itemcost"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:visibility="visible" />
+</LinearLayout>
+

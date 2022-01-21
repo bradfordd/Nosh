@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/cartButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/cart"
+        app:layout_constraintBottom_toTopOf="@+id/subwayButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:backgroundTint="@color/white"/>
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/home"
+        app:layout_constraintEnd_toStartOf="@+id/cartButton"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/white"/>
+
+    <ImageButton
+        android:id="@+id/subwayButton"
+        android:layout_width="241dp"
+        android:layout_height="151dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/subway_logo"
+        app:layout_constraintTop_toBottomOf="@id/homeButton"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/white"/>
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="241dp"
+        android:layout_height="151dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/pollo"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subwayButton"
+        android:backgroundTint="@color/white"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="239dp"
+        android:layout_height="199dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/starbucks"
+        app:layout_constraintTop_toBottomOf="@id/imageButton7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
