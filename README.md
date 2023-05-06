@@ -475,3 +475,209 @@ If the authentication is successful, it retrieves the `isEmployee` value from th
 This method initializes the `LoginActivity` and sets the click listeners for the `loginButton` and `registerButton`. The `loginButton` listener calls the `login()` method, while the `registerButton` listener calls the `register()` method. Additionally, it initializes the `FirebaseAuth` instance.
 
 The `LoginActivity` class handles user authentication and directs users to the appropriate activities based on their roles, ensuring that the app provides a personalized experience for customers and delivery employees.
+
+The RegisterActivity class is an Android activity that handles the user registration process, allowing new users to sign up for the app by providing their name, email, and password. Users can also indicate if they are a delivery employee or a customer by checking the appropriate checkbox. Upon successful registration, the user is directed to either the DeliveryActivity or the CustomerActivity based on their role.
+
+Member Variables
+regName: An EditText containing the user's name.
+regEmail: An EditText containing the user's email.
+regPassword: An EditText containing the user's password.
+regCheckBox: A CheckBox for the user to indicate if they are a delivery employee.
+mAuth: A FirebaseAuth object for authenticating and registering users with Firebase.
+Methods
+private void register()
+This method retrieves the user's name, email, password, and role (delivery employee or customer) from the input fields and validates them. If the input is valid, it attempts to create a new user using the Firebase createUserWithEmailAndPassword method.
+
+If the registration is successful, it creates a new User object and stores it in the Firebase database under the "users" node with the user's UID. Based on the user's role, it then starts either the DeliveryActivity or the CustomerActivity. The method also displays appropriate error messages in case of registration failure.
+
+onCreate()
+This method initializes the RegisterActivity and sets the click listener for the registerButton. The registerButton listener calls the register() method. Additionally, it initializes the FirebaseAuth instance.
+
+The RegisterActivity class provides a registration form for new users, allowing them to create accounts and gain access to the app. Based on the user's role as a customer or delivery employee, the activity directs them to the appropriate screen upon successful registration.
+The `User` class represents a user in the application and is designed to facilitate data transfer to Firebase. It includes the user's name, email, and a flag indicating whether the user is a delivery employee or not. The class is annotated with `@IgnoreExtraProperties`, which tells Firebase to ignore any extra properties that might be present in the database but not in the class.
+
+## Member Variables
+
+- **name**: A `String` representing the user's name.
+- **email**: A `String` representing the user's email.
+- **isEmployee**: A `boolean` flag indicating if the user is a delivery employee.
+
+## Constructors
+
+- **User()**: An empty constructor, required by FirebaseDatabase to deserialize objects when reading data from the database.
+
+- **User(String name, String email, boolean isEmployee)**: A constructor that initializes a `User` object with the given name, email, and employee status.
+
+The `User` class is a simple data transfer object (DTO) that represents a user in the application. It is used to store and retrieve user data from Firebase, providing a consistent way to handle user-related data throughout the app.
+
+This `User` class represents a user in the application and is designed to facilitate data transfer to Firebase. It includes the user's name, email, and a flag indicating whether the user is a delivery employee or not. The class is annotated with `@IgnoreExtraProperties`, which tells Firebase to ignore any extra properties that might be present in the database but not in the class.
+
+## Member Variables
+
+- **name**: A `String` representing the user's name.
+- **email**: A `String` representing the user's email.
+- **isEmployee**: A `boolean` flag indicating if the user is a delivery employee.
+
+## Constructors
+
+- **User()**: An empty constructor, required by FirebaseDatabase to deserialize objects when reading data from the database.
+
+- **User(String name, String email, boolean isEmployee)**: A constructor that initializes a `User` object with the given name, email, and employee status.
+
+The `User` class is a simple data transfer object (DTO) that represents a user in the application. It is used to store and retrieve user data from Firebase, providing a consistent way to handle user-related data throughout the app.
+
+The `MenuItem` class represents a menu item in a restaurant. It contains various attributes of the menu item, such as name, description, image, bread, customizations, price, and others.
+
+## Member Variables
+
+- **mItemName**: A `String` representing the name of the menu item.
+- **mItemDescription**: A `String` representing the description of the menu item.
+- **mBread**: A `String` representing the bread used for the menu item.
+- **mCustomizations**: A `String` representing the customizations available for the menu item.
+- **mItemID**: A `String` representing the ID of the menu item.
+- **mItemImage**: An `int` representing the resource ID of the menu item's image.
+- **mFtlong**: A `boolean` indicating if the menu item is a foot-long sandwich.
+- **mCombo**: A `boolean` indicating if the menu item is part of a combo.
+- **mPrice**: A `double` representing the price of the menu item.
+
+## Constructors
+
+- **MenuItem()**: An empty constructor, which can be used to create a new instance of the `MenuItem` class.
+- **MenuItem(String itemName, String itemDescription, int itemImage, String itemID, double price, String bread, String customizations, boolean ftlong, boolean combo)**: A constructor that initializes a `MenuItem` object with the given parameters.
+
+## Getters and Setters
+
+This class includes getter and setter methods for all member variables, which can be used to access and modify the properties of a `MenuItem` object.
+
+## Additional Methods
+
+- **setPrice()**: A method to set the price of the menu item based on the `mFtlong` property.
+
+## Overrides
+
+- **toString()**: A method that returns a string representation of the `MenuItem` object, including all its properties.
+
+The `MenuItem` class is a simple data model that represents a menu item in the application. It is used to store and manage the attributes of menu items in a consistent way throughout the app.
+
+The `MenuItemData` class represents a collection of menu items that are available in a restaurant. It contains a single member variable and two methods.
+
+## Member Variable
+
+- **menuItems**: An `ArrayList<MenuItem>` holding a collection of `MenuItem` objects.
+
+## Constructor
+
+- **MenuItemData()**: The constructor initializes the `menuItems` ArrayList and adds various pre-defined `MenuItem` objects to it, representing different sandwiches with their names, descriptions, images, and other properties.
+
+## Methods
+
+- **getMenuItems()**: A method that returns the `menuItems` ArrayList, containing all the `MenuItem` objects.
+
+The `MenuItemData` class is a simple container for a list of `MenuItem` objects, and it is used to store and manage the data for a restaurant's menu items in a consistent way throughout the app. The class can be easily expanded to add more menu items, modify existing ones, or remove items as needed.
+
+The `RestaurantItemActivity` class represents an activity for displaying and customizing a specific menu item before adding it to the cart. It extends `Activity` and has several member variables and methods.
+
+## Member Variables
+
+- **cartButton, homeButton**: `ImageButton` objects representing buttons for navigating to the cart and home screens, respectively.
+- **addButton**: A `Button` object representing the button to add a menu item to the cart.
+- **item**: A `MenuItem` object representing the selected menu item.
+- **id**: An integer representing the index of the selected menu item in the `MenuItemData` list.
+- **sixIn, ftlong, wheat, italian, herbNCheese, flat, combo**: `CheckBox` objects representing different customization options for the menu item.
+- **customizations**: An `EditText` object for the user to enter additional customizations or notes for the menu item.
+
+## Constructor and Methods
+
+- **onCreate(@Nullable Bundle savedInstanceState)**: Initializes the activity and sets up the click listeners for various buttons (home, cart, and add). It also retrieves the selected menu item based on its ID from the `MenuItemData` list.
+
+- **goHome()**: Navigates to the `CustomerActivity` screen (home screen) and clears the current activity from the back stack.
+
+- **goCart()**: Navigates to the `CartActivity` screen (cart screen) and clears the current activity from the back stack.
+
+- **addToCart(MenuItem item)**: Customizes the selected menu item based on the user's chosen options (size, bread type, combo) and any additional customizations entered. It then calls `AddToCartOnFirebase(item)` to add the item to the Firebase database and finally navigates to the cart screen by calling `goCart()`.
+
+- **AddToCartOnFirebase(MenuItem item)**: Adds the customized menu item to the user's cart in the Firebase database. It first generates a unique item ID and sets it for the item. It then creates a `DatabaseReference` pointing to the user's cart and stores the menu item data at the specified location.
+
+The `RestaurantItemActivity` class is responsible for displaying the details of a specific menu item, allowing the user to customize it, and adding it to the user's cart in the Firebase database.
+
+The `RestaurantListActivity` class represents an activity displaying a list of available restaurants. It extends `Activity` and has several member variables and methods.
+
+## Member Variables
+
+- **subwayButton, cartButton, homeButton**: `ImageButton` objects representing buttons for navigating to a specific restaurant menu (Subway in this case), cart, and home screens, respectively.
+- **cart**: An `ArrayList` of `MenuItem` objects representing the user's cart.
+
+## Constructor and Methods
+
+- **onCreate(@Nullable Bundle savedInstanceState)**: Initializes the activity and sets up click listeners for various buttons (home, cart, and subway). 
+
+- **goHome()**: Navigates to the `CustomerActivity` screen (home screen) and clears the current activity from the back stack.
+
+- **goCart()**: Navigates to the `CartActivity` screen (cart screen) and clears the current activity from the back stack.
+
+- **goMenu()**: Navigates to the `RestaurantMenuActivity` screen (restaurant menu screen) and clears the current activity from the back stack.
+
+The `RestaurantListActivity` class is responsible for displaying a list of available restaurants, allowing the user to navigate to a specific restaurant's menu, the cart screen, or the home screen. Currently, only Subway is available as a restaurant option.
+
+The `RestaurantMenuActivity` class represents an activity displaying a restaurant's menu. It extends `Activity` and has several member variables and methods.
+
+## Member Variables
+
+- **homeButton, cartButton**: `ImageButton` objects representing buttons for navigating to the home and cart screens, respectively.
+- **rvMenuItems**: `RecyclerView` object for displaying a list of menu items.
+- **cart**: A static `ArrayList` of `MenuItem` objects representing the user's cart.
+
+## Constructor and Methods
+
+- **onCreate(@Nullable Bundle savedInstanceState)**: Initializes the activity, sets up click listeners for the home and cart buttons, and configures the `RecyclerView` for displaying menu items.
+
+- **goCart()**: Navigates to the `CartActivity` screen (cart screen) and clears the current activity from the back stack.
+
+- **goHome()**: Navigates to the `CustomerActivity` screen (home screen) and clears the current activity from the back stack.
+
+### MenuItemAdapter Class
+
+`MenuItemAdapter` is a nested class that extends `RecyclerView.Adapter` for displaying menu items in a `RecyclerView`.
+
+- **itemData**: An `ArrayList` of `MenuItem` objects representing the menu items.
+
+- **MenuItemAdapter()**: Empty constructor.
+
+- **MenuItemAdapter(MenuItemData items)**: Constructor that initializes the adapter with the provided menu items and notifies that the dataset has changed.
+
+- **onCreateViewHolder(@NonNull ViewGroup parent, int viewType)**: Inflates the layout for a menu item and returns a new `MenuItemHolder` instance.
+
+- **onBindViewHolder(@NonNull MenuItemHolder holder, int position)**: Binds data to a `MenuItemHolder` at a given position, and sets up click listeners for the item name, description, and image.
+
+- **getItemCount()**: Returns the number of menu items.
+
+### MenuItemHolder Class
+
+`MenuItemHolder` is a nested class inside `MenuItemAdapter` that extends `RecyclerView.ViewHolder` for holding and managing the views associated with a menu item.
+
+- **itemName, itemDescription**: `TextView` objects representing the item name and description, respectively.
+- **itemImage**: `ImageView` object representing the item image.
+- **view**: The `View` object representing the layout of the menu item.
+
+- **MenuItemHolder(@NonNull View itemView)**: Constructor that initializes the `MenuItemHolder` with the provided view.
+
+- **getItemName(), getItemDescription(), getItemImage(), getView()**: Getter methods for the member variables.
+
+- **goItem(int id, ArrayList<MenuItem> cart)**: Starts the `RestaurantItemActivity` for the selected menu item and clears the current activity from the back stack.
+
+`RestaurantMenuActivity` is responsible for displaying the menu items in a `RecyclerView`, allowing the user to navigate to the home and cart screens, and starting the `RestaurantItemActivity` for a selected menu item.
+    
+The `MainActivity` class represents a splash screen activity that is displayed when the app is first launched. It extends `Activity` and has several member variables and methods.
+
+## Member Variables
+
+- **SPLASH_SCREEN**: An `int` constant that sets the duration of the splash screen in milliseconds (5000 ms or 5 seconds in this case).
+- **topAnim, bottomAnim**: `Animation` objects representing the animations to be applied to the logo, title, and description.
+- **logo**: An `ImageView` object representing the app's logo.
+- **title, description**: `TextView` objects representing the app's title and description.
+
+## Constructor and Methods
+
+- **onCreate(@Nullable Bundle savedInstanceState)**: Initializes the activity, sets up the animations, applies the animations to the logo, title, and description, and starts the `LoginActivity` after the specified splash screen duration.
+
+The `MainActivity` is responsible for displaying a splash screen with the app's logo, title, and description when the app is first launched. After a specified duration, the `MainActivity` starts the `LoginActivity` and finishes itself.
